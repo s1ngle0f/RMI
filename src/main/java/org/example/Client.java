@@ -10,7 +10,7 @@ public class Client
 {
     public static void main(String[] args) throws RemoteException, NotBoundException
     {
-        Registry registry = LocateRegistry.getRegistry(null);
+        Registry registry = LocateRegistry.getRegistry(1099);
         IMessage message = (IMessage) registry.lookup("Message");
         System.out.println(message.Ping());
         Scanner in = new Scanner(System.in);
