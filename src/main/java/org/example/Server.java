@@ -14,7 +14,7 @@ public class Server
         Message message = new Message();
         IMessage iMessage = (IMessage) UnicastRemoteObject.exportObject(message, 0);
 
-        Registry registry = LocateRegistry.createRegistry(1099);
+        Registry registry = LocateRegistry.createRegistry(7727);
 
         registry.bind("Message", iMessage);
 
