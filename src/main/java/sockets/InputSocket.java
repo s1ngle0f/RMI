@@ -36,8 +36,14 @@ public class InputSocket extends Thread
             while(in.hasNextLine()){
                 String msg = in.nextLine();
                 System.out.println(msg);
-                out.println( "!" + msg);
-                out.flush();
+//                out.println(msg);
+//                out.flush();
+                for (Socket socket: inputSockets)
+                {
+                    PrintWriter curOut = new PrintWriter(socket.getOutputStream());
+                    curOut.println(msg);
+                    curOut.flush();
+                }
             }
         } catch (IOException e)
         {
