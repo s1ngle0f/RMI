@@ -36,6 +36,7 @@ public class MainFrame extends JFrame
         in = new Scanner(socket.getInputStream());
         out = new PrintWriter(socket.getOutputStream());
 
+        // Поток, отвечающий за вывод сообщений в чат
         Runnable appendTextInArea = new Runnable()
         {
             @Override
